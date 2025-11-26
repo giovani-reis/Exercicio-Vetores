@@ -24,17 +24,6 @@ namespace ExercicioFixaxaoVetores10._3
             return str;
         }
 
-        /*        static int ValidaInt()
-                {
-                    int quantidade;
-                    while (!int.TryParse(Console.ReadLine(), out quantidade) || quantidade < 1)
-                    {
-                        Console.Clear();
-                        Console.Write("Inválido! Informe apenas números: ");
-                    }
-                    return quantidade;
-                }
-        */
 
         static int ValidaIntQuartos()
         {
