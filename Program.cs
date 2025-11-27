@@ -12,7 +12,7 @@ namespace ExercicioFixaxaoVetores10._3
             while (true)
             {
                 str = Console.ReadLine();
-                if (str == null || str == "")
+                if (str == null || str == "" || str == " ")
                 {
                     Console.Clear();
                     Console.Write("Inválido! Tente novamente: ");
@@ -35,6 +35,39 @@ namespace ExercicioFixaxaoVetores10._3
             }
             return quantidade;
         }
+
+        static int ValidaQuartosJaAlugados(List<int> indisponiveis)
+        {
+            int quarto;
+            while (true)
+            {
+                bool repete = false;
+                quarto = ValidaIntQuartos();
+                for (int k = 0; k < indisponiveis.Count; k++)
+                {
+                    if (indisponiveis[k] == quarto)
+                    {
+                        repete = true;
+                        break;
+                    }
+
+                }
+                if (repete == true)
+                {
+                    Console.Clear();
+                    Console.Write("Quarto já alugado! Digite outro: ");
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+
+            }
+
+            return quarto;
+        }
+
 
         static void Main(string[] args)
         {
@@ -65,31 +98,7 @@ namespace ExercicioFixaxaoVetores10._3
                 }
                 else
                 {
-                    while (true)
-                    {
-                        bool repete = false;
-                        quarto = ValidaIntQuartos();
-                        for (int k = 0; k < indisponiveis.Count; k++)
-                        {
-                            if (indisponiveis[k] == quarto)
-                            {
-                                repete = true;
-                                break;
-                            }
-
-                        }
-                        if (repete == true)
-                        {
-                            Console.Clear();
-                            Console.Write("Quarto já alugado! Digite outro: ");
-                            continue;
-                        }
-                        else
-                        {
-                            break;
-                        }
-
-                    }
+                    quarto = ValidaQuartosJaAlugados(indisponiveis);
                     indisponiveis.Add(quarto);
                 }
 
